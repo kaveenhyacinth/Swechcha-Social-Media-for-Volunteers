@@ -4,6 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 // Fire controllers
+const eventController = require('./controllers/eventController');
+const userController = require('./controllers/userController');
+const hostController = require('./controllers/hostController');
+const adminController = require('./controllers/adminController');
 
 // Set environment var file
 require('dotenv').config();
@@ -22,6 +26,10 @@ app.use(express.json());
 app.use(express.static('./public'));
 
 // Use controllers as middleware
+app.use('/event', eventController);
+app.use('/user', userController);
+app.use('/host', hostController);
+app.use('/admin', adminController);
 
 // Database uri
 
