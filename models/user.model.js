@@ -11,8 +11,7 @@ const UserSchema = new Schema({
             trim: true
         },
         mname : {
-            type: String, 
-            required: true,
+            type: String,
             trim: true
         },
         lname : {
@@ -22,46 +21,46 @@ const UserSchema = new Schema({
         }
     },
 
-    NIC : {
-        type: String, 
-        required: true,
-        trim: true,
-        unique :true
-    },
+    // NIC : {
+    //     type: String, 
+    //     required: true,
+    //     trim: true,
+    //     unique :true
+    // },
 
-    DOB : {
-        type: Date, 
-        required: true,
-    },
+    // DOB : {
+    //     type: Date, 
+    //     required: true,
+    // },
 
-    address : {
-        line1 : {
-            type: String,
-            required: true
-        },
-        city : {
-            type: String,
-            required: true
-        },
-        district : {
-            type: String, 
-            required: true
-        },
-        country : {
-            type: String, 
-            required: true
-        },
-        postalCode: {
-            type: Number, 
-            required: true
-        }
-    },
+    // address : {
+    //     line1 : {
+    //         type: String,
+    //         required: true
+    //     },
+    //     city : {
+    //         type: String,
+    //         required: true
+    //     },
+    //     district : {
+    //         type: String, 
+    //         required: true
+    //     },
+    //     country : {
+    //         type: String, 
+    //         required: true
+    //     },
+    //     postalCode: {
+    //         type: Number, 
+    //         required: true
+    //     }
+    // },
 
-    contactNo : {
-        type: String, 
-        required: true,
-        trim: true
-    },
+    // contactNo : {
+    //     type: String, 
+    //     required: true,
+    //     trim: true
+    // },
 
     email : {
         type: String,
@@ -70,45 +69,45 @@ const UserSchema = new Schema({
         trim: true
     },
 
-    profession : {
-        type: String, 
-        required: true
-    },
+    // profession : {
+    //     type: String, 
+    //     required: true
+    // },
 
     password : {
         type: String, 
         required: true,
         minlength: 6
         
-    },
+    }
 
-    DateJoined : {
-        type: Date,
-        'default' : Date.now
-    },
+    // DateJoined : {
+    //     type: Date,
+    //     'default' : Date.now
+    // },
     
-    ProfileImage : {
-        data:Buffer,
-        contentType: String
-    },
+    // ProfileImage : {
+    //     data:Buffer,
+    //     contentType: String
+    // },
 
-    CoverImage : {
-        data:Buffer,
-        contentType: String
-    },
+    // CoverImage : {
+    //     data:Buffer,
+    //     contentType: String
+    // },
 
-    EventJoined :[{
-            EventID : {
-                type: Schema.Types.ObjectID,
-                ref : "Event",
-                required : true    
-            },
-            EventJoinedDate : {
-                type: Date, 
-                'default' : Date.now
-            }
-        }
-        ]
+    // EventJoined :[{
+    //         EventID : {
+    //             type: Schema.Types.ObjectID,
+    //             ref : "Event",
+    //             required : true    
+    //         },
+    //         EventJoinedDate : {
+    //             type: Date, 
+    //             'default' : Date.now
+    //         }
+    //     }
+    //     ]
     
 },
 {
@@ -116,6 +115,6 @@ const UserSchema = new Schema({
 }
 );
 
-const user = mongoose.model('user', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
-module.exports = user;
+module.exports = User;
