@@ -32,11 +32,20 @@ app.use('/host', hostController);
 app.use('/admin', adminController);
 
 // Database uri
+const uri = process.env.ATLAS_URI;
 
 // Database connection
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+});
 
 // Deploy DB connection
-
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log('Connected to mongoDB');
+});
 
 // Set port to listen
 app.listen(port, () => {
