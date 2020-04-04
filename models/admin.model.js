@@ -8,12 +8,12 @@ const AdminSchema = new Schema({
                 required: true
         },
 
-        email: {
-                type: String,
-                required: true,
-                trim: true,
-                unique: true
-        },
+        // email: {
+        //         type: String,
+        //         required: true,
+        //         trim: true,
+        //         unique: true
+        // },
 
         password: {
                 type: String,
@@ -26,6 +26,6 @@ const AdminSchema = new Schema({
         timestamps: true,
 });
 
-const admin = mongoose.model('admin', UserSchema);
+const admin = mongoose.model('admin', AdminSchema);
 
 module.exports = admin;
