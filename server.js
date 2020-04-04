@@ -37,6 +37,7 @@ app.use('/admin', adminController);
 
 // Deploy DB connection
 
+
 // Set port to listen
 app.listen(port, () => {
     console.log(`App is now online at port ${port}`);
