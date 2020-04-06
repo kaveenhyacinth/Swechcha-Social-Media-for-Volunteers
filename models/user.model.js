@@ -21,46 +21,46 @@ const UserSchema = new Schema({
         }
     },
 
-    // NIC : {
-    //     type: String, 
-    //     required: true,
-    //     trim: true,
-    //     unique :true
-    // },
+    NIC : {
+        type: String, 
+        required: true,
+        trim: true,
+        unique :true
+    },
 
-    // DOB : {
-    //     type: Date, 
-    //     required: true,
-    // },
+    DOB : {
+        type: Date, 
+        required: true,
+    },
 
-    // address : {
-    //     line1 : {
-    //         type: String,
-    //         required: true
-    //     },
-    //     city : {
-    //         type: String,
-    //         required: true
-    //     },
-    //     district : {
-    //         type: String, 
-    //         required: true
-    //     },
-    //     country : {
-    //         type: String, 
-    //         required: true
-    //     },
-    //     postalCode: {
-    //         type: Number, 
-    //         required: true
-    //     }
-    // },
+    address : {
+        line1 : {
+            type: String,
+            required: true
+        },
+        city : {
+            type: String,
+            required: true
+        },
+        district : {
+            type: String, 
+            required: true
+        },
+        country : {
+            type: String, 
+            required: true
+        },
+        postalCode: {
+            type: Number, 
+            required: true
+        }
+    },
 
-    // contactNo : {
-    //     type: String, 
-    //     required: true,
-    //     trim: true
-    // },
+    contactNo : {
+        type: String, 
+        required: true,
+        trim: true
+    },
 
     email : {
         type: String,
@@ -69,22 +69,21 @@ const UserSchema = new Schema({
         trim: true
     },
 
-    // profession : {
-    //     type: String, 
-    //     required: true
-    // },
+    profession : {
+        type: String, 
+        required: true
+    },
 
     password : {
         type: String, 
         required: true,
         minlength: 6
-        
-    }
+    },
 
-    // DateJoined : {
-    //     type: Date,
-    //     'default' : Date.now
-    // },
+    DateJoined : {
+        type: Date,
+        'default' : Date.now
+    },
     
     // ProfileImage : {
     //     data:Buffer,
@@ -107,14 +106,13 @@ const UserSchema = new Schema({
     //             'default' : Date.now
     //         }
     //     }
-    //     ]
-    
+    //     ]   
 },
 {
     timestamps: true
 }
 );
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema, 'users');
 
 module.exports = User;
