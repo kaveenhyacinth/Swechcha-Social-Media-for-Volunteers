@@ -1,14 +1,10 @@
 const router = require('express').Router();
-const bodyParser = require('body-parser');
 
 // Load user model
 var User = require('../models/user.model');
 
-// Setup url encoding
-const encodedUrlParser = bodyParser.urlencoded({ extended: true });
-
 // Manage login
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
     var uname = req.body.uname;
     var pass = req.body.pass;
 
@@ -23,7 +19,7 @@ router.get('/login', (req, res) => {
 });
 
 // Add new user to db aka registration
-router.post('/add', encodedUrlParser, (req, res) => {
+router.post('/add', (req, res) => {
     var user = req.body;
 
     var newUser = new User(user);
@@ -36,7 +32,7 @@ router.post('/add', encodedUrlParser, (req, res) => {
     .catch(err => res.status(400).json('Error ' + err));
 });
 
-// Get user data from db
+// Get user data from db aka profile
 router.get('/:id', (req, res) => {
     // get user id
     var id = req.params.id;
@@ -48,7 +44,7 @@ router.get('/:id', (req, res) => {
 });
 
 // update user data aka profile update
-router.post('/update/:id', encodedUrlParser, (req, res) => {
+router.post('/update/:id', (req, res) => {
     var userId = req.params.id;
     var userUpdate = req.body;
 

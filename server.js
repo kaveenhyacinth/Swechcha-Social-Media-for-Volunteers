@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+
 // Fire controllers
 const eventController = require('./controllers/eventController');
 const userController = require('./controllers/userController');
@@ -22,6 +23,7 @@ app.set('view engine', 'ejs');
 
 // middlewares
 app.use(cors());
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('./public'));
 
