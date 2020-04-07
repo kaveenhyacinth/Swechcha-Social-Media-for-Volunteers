@@ -5,10 +5,11 @@ const mongoose = require('mongoose');
 
 
 // Fire controllers
-const eventController = require('./controllers/eventController');
-const userController = require('./controllers/userController');
-const hostController = require('./controllers/hostController');
-const adminController = require('./controllers/adminController');
+const eventRouter = require('./routes/event');
+const volunteerRouter = require('./routes/volunteer');
+const hostRouter = require('./routes/host');
+const adminRouter = require('./routes/admin');
+const authRouter = require('./routes/auth');
 
 // Set environment var file
 require('dotenv').config();
@@ -28,10 +29,11 @@ app.use(express.json());
 app.use(express.static('./public'));
 
 // Use controllers as middleware
-app.use('/event', eventController);
-app.use('/user', userController);
-app.use('/host', hostController);
-app.use('/admin', adminController);
+app.use('/event', eventRouter);
+app.use('/volunteer', volunteerRouter);
+app.use('/host', hostRouter);
+app.use('/admin', adminRouter);
+app.use('/auth', authRouter);
 
 // Database uri
 const uri = process.env.ATLAS_URI;
@@ -40,7 +42,8 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 
 // Deploy DB connection
