@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const VolunteerSchema = new Schema({
     //user name
     name : {
         fname : {
@@ -116,6 +116,6 @@ const UserSchema = new Schema({
 }
 );
 
-const user = mongoose.model('user', UserSchema);
+const Volunteer = mongoose.model('volunteer', VolunteerSchema);
 
-module.exports = user;
+module.exports = Volunteer;
