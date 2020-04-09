@@ -22,39 +22,6 @@ const port = process.env.PORT || 3000;
 // Set template engine
 app.set('view engine', 'ejs');
 
-/******
- * TESTING
- ******/
-
-app.get('/',function(req, res){
-    res.sendFile(__dirname+'/index.html');
-});
-
-app.get('/login/adm',function(req, res){
-    res.render('AdminLogin');
-});
-
-app.get('/login/usr',function(req, res){
-    res.render('userlogin');
-});
-
-app.get('/register/volunteer',function(req, res){
-    res.render('volreg');
-});
-
-app.get('/register/organization',function(req, res){
-    res.render('orgreg');
-});
-
-app.get('/host/admin/:id',function(req, res){
-   
-    res.render('Hostadmin',{love: req.params.id});
-});
- /******
- * END OF TESTING
- ******/
-
-
 // middlewares
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
