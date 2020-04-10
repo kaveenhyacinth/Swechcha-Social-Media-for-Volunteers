@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Host Admin Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Icon image using -->	
+	<link rel="icon" type="image/png" href="/assets/images/logo.png"/>
+
+	<link rel="stylesheet" type="text/css" href="/assets/styles/bootstrap.min.css">
+<!--Using Fonts-->
+	<link rel="stylesheet" type="text/css" href="/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--Using Icon Font -->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    
+<!--Using Animate CSS-->
+	<link rel="stylesheet" type="text/css" href="/assets/styles/animate.css">
+
+
+<!--Using HAmburgers CSS-->	
+	<link rel="stylesheet" type="text/css" href="/assets/styles/hamburgers.min.css">
+
+<!--Using Select CSS-->
+	<link rel="stylesheet" type="text/css" href="/assets/styles/select2.min.css">
+
+
+
+<!--Using Util css  and main css-->
+	<link rel="stylesheet" type="text/css" href="/assets/styles/util.css">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/admin.css">
+    
+</head>
+<!-- Start of Register-->
+<body>
+	
+	<div class="limiter">
+		<div class="container-register100">
+			<div class="wrap-register100 p-l-50 p-r-50 p-t-77 p-b-30">
+				<form class="register100-form validate-form">
+					<span class="register100-form-title p-b-55">
+					<h2> Host Admin Page </h2>
+					<h4>Event Registration</h4>
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Event Title Required">
+						<input class="input100" type="text" name="Event Title" placeholder="Event Title">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Event Type Required">
+						<input class="input100" type="text" name="Event Type" placeholder="Event Type">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-list-alt" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "date required">
+						<label>Event start Date :&nbsp;</label>
+						<br>
+						<i class="fa fa-calendar" aria-hidden="true"></i>
+						<input class="input50" type="date" name="Image"  placeholder="Event start Date ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+					
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Image Required">
+						<label> Event Image &nbsp;<i class="fa fa-file-image-o" aria-hidden="true"></i></label>
+						<input class="input50" type="file" name="Image" placeholder="Company Image ">
+						<span class="focus-input100"></span>
+						<script></script>
+						<span class="symbol-input100">
+							
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Time Required">
+						<input class="input100" type="time" value="13:00" name="Time" placeholder="Time">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16">
+						<input class="input100" type="text" name="Postal Code" placeholder="Postal Code ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Event Address Required">
+						<input class="input100" type="text" name="Category" placeholder="Event Address">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-bank" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "City Required">
+						<input class="input100" type="text" name="Category" placeholder="City">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-building" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "District Required">
+						<!-- <label>District  &nbsp;<i class="fa fa-map-marker" aria-hidden="true"></i></label><br> -->
+						<select id="Districts" class="input100">
+							<option value="District" selected>District</option>
+							 <option value="Ampara">Ampara</option>
+							 <option value="Anuradhapura">Anuradhapura</option>
+							 <option value="Badulla">Badulla</option>
+							 <option value="Batticaloa">Batticaloa</option>
+							 <option value="Colombo">Colombo</option>
+							 <option value="Galle">Galle</option>
+							 <option value="Gampaha">Gampaha</option>
+							 <option value="Hambantota">Hambantota</option>
+							 <option value="Jaffna">Jaffna</option>       
+							 <option value="Kalutara">Kalutara</option>
+							 <option value="Kandy">Kandy</option>
+							 <option value="Kegalle">Kegalle</option>
+							 <option value="Kilinochchi">Kilinochchi</option>
+							 <option value="Kurunegala">Kurunegala</option>
+							 <option value="Mannar">Mannar</option>
+							 <option value="Matale">Matale</option>
+							 <option value="Matara">Matara</option>
+							 <option value="Monaragala">Monaragala</option>
+							 <option value="Mulativu">Mulativu</option>
+							 <option value="Nuwara Eliya">Nuwara Eliya</option>
+							 <option value="Polonnaruwa">Polonnaruwa</option>
+							  <option value="Puttalam">Puttalam</option>
+							   <option value="Ratnapura">Ratnapura</option>
+								<option value="Trincomalee">Trincomalee</option>
+								 <option value="Vavuniya">Vavuniya</option>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							
+
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Volunteers Required">
+						<input class="input100" type="number" name="Volunteers" min="1" max="5000" placeholder="Volunteers">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-users" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="container col-8">
+						  <div class="form-group">
+							<!-- <label for="comment">Event Description:</label> -->
+							<textarea class="form-control input100" rows="5" id="comment" placeholder="Event Description"></textarea>
+						  </div>
+					<div class="btn-group" style="width:100%">
+						<button  class="register100-form-btn">
+							ADD
+						</button>&nbsp;
+						<button  class="register100-form-btn">
+							DELETE
+						</button>&nbsp;
+						<button type="reset" value="reset" class="register100-form-btn">
+							RESET
+						</button>
+					  </div> 
+					&nbsp;
+					&nbsp;
+					&nbsp;
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+<!--===============================================================================================-->	
+	<script src="/src/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/src/popper.js"></script>
+	<script src="/src/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/src/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/src/main.js"></script>
+	
+
+	
+
+</body>
+</html>

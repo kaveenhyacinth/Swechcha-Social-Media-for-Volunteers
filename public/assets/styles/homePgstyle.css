@@ -37,7 +37,7 @@ body{
 }
 .site-container{
     margin-top: -3%;
-    background-image: url('/swechcha/public/assets/images/img1.jpg');
+    background-image: url('/assets/images/img1.jpg');
     background-attachment: fixed;
     background-size: cover;  
 }

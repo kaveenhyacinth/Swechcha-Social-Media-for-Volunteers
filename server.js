@@ -35,6 +35,9 @@ app.use('/host', hostRouter);
 app.use('/admin', adminRouter);
 app.use('/auth', authRouter);
 
+
+
+/*
 // Database uri
 const uri = process.env.ATLAS_URI;
 
@@ -51,6 +54,7 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('Connected to mongoDB');
 });
+*/
 
 // Set port to listen
 app.listen(port, () => {
