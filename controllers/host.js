@@ -14,28 +14,36 @@ const findById = (req, res) => {
 
 // Update host data
 const update = (req, res) => {
-  var hostId = req.params.id;
-  var update = req.body;
+  if (req.session.signedAs == "host") {
+    var hostId = req.params.id;
+    var update = req.body;
 
-  console.log(update);
+    console.log(update);
 
-  // Render to view when updated
-  Host.findByIdAndUpdate(hostId, update)
-    .then(() => {
-      Host.findById(hostId)
-        .populate("eventsHosted", "eventname desc")
-        .then((data) => res.json(data))
-        .catch((err) => res.status(400).json("Error " + err));
-    })
-    .catch((err) => res.status(400).json("Error " + err));
+    // Render to view when updated
+    Host.findByIdAndUpdate(hostId, update)
+      .then(() => {
+        Host.findById(hostId)
+          .populate("eventsHosted", "eventname desc")
+          .then((data) => res.json(data))
+          .catch((err) => res.status(400).json("Error " + err));
+      })
+      .catch((err) => res.status(400).json("Error " + err));
+  } else {
+    res.send("not a host");
+  }
 };
 
 // Read all
 const read = (req, res) => {
-  Host.find()
-    .populate("eventsHosted", "eventname desc")
-    .then((data) => res.json(data))
-    .catch((err) => res.status(400).json("Error " + err));
+  if (req.session.signedAs == "admin") {
+    Host.find()
+      .populate("eventsHosted", "eventname desc")
+      .then((data) => res.json(data))
+      .catch((err) => res.status(400).json("Error " + err));
+  } else {
+    res.send("not an admin");
+  }
 };
 
 // Get hosted event list

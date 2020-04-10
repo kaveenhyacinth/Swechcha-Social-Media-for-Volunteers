@@ -21,11 +21,13 @@ const volunteerSignin = async (req, res) => {
         req.session.volId = data._id;
         req.session.signedAs = "volunteer";
 
-        console.log(req.session.volId + " is signed as a " + req.session.signedAs);
+        console.log(
+          req.session.volId + " is signed as a " + req.session.signedAs
+        );
 
         res.redirect("/volunteer/" + data._id);
       } else {
-        req.session.signed = false;
+        req.session.signedAs = "none";
         res.send("please enter valid credentials");
       }
     }) // redirect to Volunteer data
@@ -76,10 +78,13 @@ const hostSignin = async (req, res) => {
         req.session.volId = data._id;
         req.session.signedAs = "host";
 
-        console.log(req.session.volId + " is signed as a " + req.session.signedAs);
+        console.log(
+          req.session.volId + " is signed as a " + req.session.signedAs
+        );
 
         res.redirect("/host/" + data._id);
       } else {
+        req.session.signedAs = "none";
         res.send("please enter valid credentials");
       }
     }) // redirect to Volunteer data
@@ -130,10 +135,13 @@ const adminSignin = async (req, res) => {
         req.session.volId = data._id;
         req.session.signedAs = "admin";
 
-        console.log(req.session.volId + " is signed as a " + req.session.signedAs);
+        console.log(
+          req.session.volId + " is signed as a " + req.session.signedAs
+        );
 
         res.redirect("/admin/" + data._id);
       } else {
+        req.session.signedAs = "none";
         res.send("please enter valid credentials");
       }
     }) // redirect to Volunteer data
@@ -170,7 +178,7 @@ const adminSignup = async (req, res) => {
 // Signout
 const signout = (req, res) => {
   req.session.destroy(() => {
-    res.redirect('/event');
+    res.redirect("/event");
   });
 };
 

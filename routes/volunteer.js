@@ -7,6 +7,9 @@ var volunteerController = require("../controllers/volunteer");
 // Read all volunteers
 router.get("/", volunteerController.read);
 
+// Volunteer signin page
+router.get("/signin", volunteerController.signin);
+
 // Get Volunteer profile by id
 router.get("/:id", volunteerController.findById);
 
