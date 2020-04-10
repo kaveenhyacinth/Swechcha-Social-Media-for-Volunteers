@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Swechcha Home page</title>
+    
+    <!--BootStrap and other links-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" > 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- JavaScript Link -->
+    <script src="/swechcha/public/src/homePg.js"></script>
+    <!-- link to css page design -->
+    <link rel="stylesheet" href="/public/assets/styles/homePgstyle.css">  
+    <!--link to animation.css-->
+    <link rel="stylesheet" href="/public/assets/styles/animation.css">
+</head>
+<body>
+    <!--this header contain the navigation-bar code-->
+    <header> 
+        <nav class="navbar navbar-expand-lg navbar-light animated fadeIn slow">
+            <a href="#" class="navbar-brand ml-2">Swechcha<span style="color: chocolate;">.org</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-traget="#navbarMenu"
+            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"></div>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active ">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#event" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#con" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Login</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn menu-right-btn border" type="submit">
+                        Register 
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!-- End of navigation-bar  -->
+   <main>
+       <!--this part contains the main image and the get started btn-->
+       <div class="container-fluid p-0"> 
+           <div class="site-container" id="home">
+                <div class="d-flex justify-content-center">
+                    <div class="d-flex flex-column animated fadeIn delay-1s slower">
+                        <h1 class="site-title">Never Underestimate</h1>
+                        <p class="site-desc">Your Ability To Make Some Else's Life Better</p>
+                        <div class="d-flex flex-row">
+                          <input type="button" value="Get Started" class="btn site-btn1 px-4 py-3 btn-light">
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+       <!-- End of main image container -->
+
+       <!--Section 1 code-->
+        <div class="section-1" >
+            <div class="container text-center" id="about">
+               <h1 class="heading-1 animated fadeIn delay-2s slower">Who Are We?</h1>
+               <p class="para-1 animated flipInX delay-2s slower">We are team Swechcha. The team behined the project Swechcha.org.
+                    What is Swechcha.org? Swechcha.org is a platfrom that help volunteers the participate in event. To help the betterment of the socity and future genarations.
+                   Also You can Host an event as an Organzation the help carry an event of request
+                </p>
+            </div>
+             <!--Page Wrapper-->
+
+            <div class="container-fluid"  data-aos="fade-in"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="2000">
+              <div class="row">
+                <h1>Events</h1>
+                <div class="col-sm-12">
+
+                  <!--Start-->
+                <div id="inam" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="container" id="event">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-4">
+                                        <div class="card" style="width: 300px;margin: auto; height: 32rem;" data-aos="fade-in"     
+                                        data-aos-offset="200" 
+                                        data-aos-delay="80"
+                                        data-aos-duration="4000" > <!--Event Cards-->
+                                        <img src="/public/assets/images/card1.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Heading</h5>
+                                                <span>type</span></br>
+                                                <span>status</span></br>
+                                                <span>location</span></br>
+                          
+                                                <p class="card-text" style="margin-top: 5%;">This is a wider card with supporting text below as a natural 
+                                                    lead-in to additional content. This content is a little bit longer.</p>
+                        
+                                                <a href="#" class="btn btn-primary">More..</a>
+                                                 <p class="card-text"><small class="text-muted">Startes on 06/04/2020</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!--End-->
+                    <a href="#inam" class="carousel-control-prev" data-slide="prev"> <!--Prevous btn in the carosel-->
+                      <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a href="#inam" class="carousel-control-next" data-slide="next">  <!--Next btn in the carosel-->
+                      <span class="carousel-control-next-icon"></span>
+                    </a>
+                    
+                  </div>
+                  
+                </div>
+                
+              </div>
+              
+            </div>
+
+        </div>
+       <!-- End of section 1 -->
+       <!--Section 2 Code-->
+       <div class="section-2">
+            <div class="contatiner" data-aos="fade-in"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="2000">
+                <!--Start-->
+                <div class="col-md-4"  data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="3000">
+                    <div class="d-flex flex-row">
+                        <img src="/public/assets/images/connect.png">
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">
+                                Join Event
+                            </h3>
+                            <p class="m-2">
+                                Join events and help the socity to grow. And make connection 
+                                to your self grow.
+                            </p>
+                        </div> 
+                    </div>   
+                </div>
+                <div class="col-md-4"  data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="2000">
+                    <div class="d-flex flex-row ">
+                        <img src="/public/assets/images/checklist.png">
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">
+                                Check Events
+                            </h3>
+                            <p class="m-2">
+                                Check through the events list and as per your location.
+                            </p>
+                        </div> 
+                    </div>   
+                </div>
+                
+                <div class="col-md-4"  data-aos="fade-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000">
+                    <div class="d-flex flex-row">
+                        <img src="/public/assets/images/login.png">
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">
+                                Register & Login 
+                            </h3>
+                            <p class="m-2">
+                                Register with swechcha.org to start your journey as 
+                                volunteering or to Host an events as perfered.
+                            </p>
+                        </div> 
+                    </div>   
+                </div>
+                <!--End-->
+            </div>
+        </div>
+        <!-- End of section 2 -->
+        <!-- Section 3 -->
+        
+            <div class="row container-2" id="reg">
+              <div class="col volunteer"  data-aos="fade-in"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="2000">
+                <img src="/public/assets/images/volunteer.png">
+                <div class="btn-4">
+                  <button class="button button2">Join As Volunteer</button>
+                </div>
+              </div>
+              <div class="col vl"  data-aos="fade-in"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="3000"></div>
+              <div class=" col organi"  data-aos="fade-in"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="4000">
+                <img src="/public/assets/images/group.png">
+                <div class="btn-4">
+                  <button class="button button2">Join As Organization</button> 
+                </div>
+              </div>
+            </div>
+        
+        <!-- End of Section 3 -->
+        <!-- Footer -->
+        <footer>
+          <div class="row" id="con">
+              <div class="col-sm-6 col-md-4 footer-navigation">
+                  <h3><a href="#">Swechcha<span></span></a></h3>
+                  <p class="links"> 
+                    <a href="#">Home</a></br></br> 
+                    <a href="#">Events</a></br></br>  
+                    <a href="#">About</a></br></br>  
+                    <a href="#">Contact</a></br></br>
+                  </p>
+                  <p class="company-name">Swechca&copy; 2020</p>
+              </div>
+              <div class="col-sm-6 col-md-4 footer-contacts">
+                  <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                      <p><span class="new-line-span">500, Havelock Road,&nbsp;</span>Colombo 05, Sri Lanka</p>
+                  </div>
+                  <div><i class="fa fa-phone footer-contacts-icon"></i>
+                      <p class="footer-center-info email text-left"> +94 011 123456</p>
+                  </div>
+                  <div><a href="#" target="_blank"><i class="fa fa-envelope-o footer-contacts-icon"></i>support@swechcha.org</a>
+                      <p> </p>
+                  </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-md-4 footer-about">
+                  <h4>About the company</h4>
+                  <p>swechcha is Online volunteer and hosting platform. for people who have awareness to do volunteering and organize volunteer events.&nbsp;</p>
+                  <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+              </div>
+          </div>
+      </footer>
+        <!-- End of Footer -->
+   </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <!-- On scroll animation -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+</html> 
