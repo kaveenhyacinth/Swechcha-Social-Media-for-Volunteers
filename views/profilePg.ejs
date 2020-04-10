@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/85bcb2089a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/styles/profilePg.css"> <!-- link to css -->
+    <script defer src="/src/profile.js"></script> <!--link to JS -->
+    <title>Profile</title>
+</head>
+<body>
+    <header> <!--this header contain the navigation bar code-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="#" class="navbar-brand ml-2">Swechcha<span style="color: chocolate;">.org</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-traget="#navbarMenu"
+            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"></div>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Home</a> <!--Link this to home.html page-->
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a href="#" class="nav-link">About Us</a> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a href="#" class="nav-link">Login</a> -->
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <!-- <button class="btn menu-right-btn border" type="submit">
+                        Register 
+                    </button> -->
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    
+    <div class="cover-photo">
+            <a id="coverbtn"><i class="fas fa-plus-circle" ></i></a>
+    </div>
+    <div class="body">
+        <section class="left-col user-info">
+            <div class="profile-avatar">
+                <div class="inner">
+                    <div class="change">
+                        <a id="probtn"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="lef-col-con">
+                <h1>@Dylan Malitha</h1>
+                <h2>Volunteer</h2>
+                <div class="meta">
+                    <p><i class="fa fa-fw fa-map-marker"></i> Australia</p>
+                    <p><i class="fa fa-fw fa-clock-o"></i> Joined Dec 26, 2008</p>
+                </div>
+                <div class="info">
+                    <h4>Other</h4>
+                    <h3>Souls:</h3>
+                    <p>259</p>
+                    <h3>Circles:</h3>
+                    <p>5</p>
+                    <h3>Events:</h3>
+                    <p>45</p>
+                    <h3>Host</h3>
+                    <p>3</p>
+                </div>
+            </div>
+        </section>
+      
+        <section class="section center-col content">
+        
+            <!-- Nav -->
+            <div id="myDIV">
+                <a href="timeline.html" class="btn">TimeLine</a>
+                <a href="profilePg.html" class="btn active">About</a>
+                <a href="" class="btn">Friends</a>                
+                <a href="" class="btn">Report</a>                
+              </div>
+                <hr>
+                <!-- Edit Profile Start -->
+                <div class="container py-2">
+                    <div class="row my-2">
+                        <!-- edit form column -->
+                        <div class="col-lg-8 order-lg-1 personal-info">
+                            <form role="form">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="Dylan" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="Malitha" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">NIC</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="1999674532" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Date of Birth</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Contact Number</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="url" value="" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="" placeholder="Street" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="text" value="" placeholder="City" />
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input class="form-control" type="text" value="" placeholder="District" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Postal Code</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="" placeholder="10200" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Country</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="" placeholder="Sri Lanka" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Profesion</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="Software Engineer" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="dylan99@gmail.com" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                    <div class="col-lg-9">
+                                        <input type="button" class="btn btn-primary active" value="Change password" id="passbtn" / style="height: 45px; ">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <div class="col-lg-9 ml-auto text-right">
+                                        <input type="button" class="btn btn-primary active" value="Save Changes" / style="margin-top: 10%;">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Edit Profile -->
+        </section>
+      <section class="right-col">
+        
+      </section>
+      
+    </div>
+    <!-- form for change password -->
+    <div class="forms">
+       <!-- The Modal -->
+        <div id="pass" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h4 style="margin-top: 3%; margin-bottom: 6%;">To Change Password</h4>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Current Password</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="password" value="dylan99@gmail.com" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">New Password</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="password" value="dylan99@gmail.com" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Confirm Password</label>
+                    <div class="col-lg-9">
+                        <input class="form-control" type="password" value="dylan99@gmail.com" />
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">Change</a>
+            </div>
+        </div>
+    </div>
+    <!-- End of form -->
+    
+
+    <!-- form for change profilepic -->
+    <div class="forms">
+        <!-- The Modal -->
+         <div id="profi" class="modal">
+ 
+             <!-- Modal content -->
+             <div class="modal-content">
+                 <span class="close1">&times;</span>
+                 <h4 style="margin-top: 3%; margin-bottom: 6%;">Upload New Profile Image</h4>
+                 <div class="Neon Neon-theme-dragdropbox">
+                    <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
+                    <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
+                    </div>
+                    <a href="#" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">Upload</a>
+             </div>
+         </div>
+     </div>
+     <!-- End of form -->
+
+      <!-- form for change Coverpic -->
+    <div class="forms">
+        <!-- The Modal -->
+         <div id="cover_img" class="modal">
+ 
+             <!-- Modal content -->
+             <div class="modal-content">
+                 <span class="close2">&times;</span>
+                 <h4 style="margin-top: 3%; margin-bottom: 6%;">Upload New Cover Image</h4>
+                 <div class="Neon Neon-theme-dragdropbox">
+                    <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
+                    <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
+                    </div>
+                    <a href="#" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">Upload</a>
+             </div>
+         </div>
+     </div>
+     <!-- End of form -->
+
+    
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67239/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/psm0wvc.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    
+</body>
+</html>
+
