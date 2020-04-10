@@ -21,6 +21,19 @@ const VolunteerSchema = new Schema(
       },
     },
 
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
+    },
+
     NIC: {
       type: String,
       required: true,
@@ -34,7 +47,7 @@ const VolunteerSchema = new Schema(
     },
 
     address: {
-      line1: {
+      street: {
         type: String,
         required: true,
       },
@@ -42,7 +55,7 @@ const VolunteerSchema = new Schema(
         type: String,
         required: true,
       },
-      district: {
+      state: {
         type: String,
         required: true,
       },
@@ -62,19 +75,6 @@ const VolunteerSchema = new Schema(
       trim: true,
     },
 
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-    },
-
-    password: {
-      type: String,
-      required: true,
-      minlength: 6,
-    },
-
     profession: {
       type: String,
       required: true,
@@ -90,18 +90,12 @@ const VolunteerSchema = new Schema(
       contentType: String,
     },
 
-    // EventJoined :[{
-    //         EventID : {
-    //             type: Schema.Types.ObjectID,
-    //             ref : "events",
-    //             required : true
-    //         },
-    //         EventJoinedDate : {
-    //             type: Date,
-    //             'default' : Date.now
-    //         }
-    //     }
-    //     ]
+    eventsJoined: [
+      {
+        type: Schema.Types.ObjectID,
+        ref: "Event",
+      },
+    ],
   },
   {
     timestamps: true,

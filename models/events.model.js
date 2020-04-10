@@ -12,47 +12,53 @@ const EventsSchema = new Schema(
       trim: true,
     },
 
-    // eventCreatedDate: {
-    //   type: Date,
-    //   default: Date.now,
-    //   required: true,
-    // },
+    eventCreatedDate: {
+      type: Date,
+      default: Date.now,
+    },
 
-    // eventClosedDate: {
-    //   type: Date,
-    //   required: true,
-    // },
+    eventDate: {
+      type: Date,
+      required: true,
+    },
 
-    // eventDate: {
-    //   type: Date,
-    //   required: true,
-    // },
+    eventlocation: {
+      street: {
+        type: String,
+        required: true,
+      },
+      city: {
+        type: String,
+        required: true,
+      },
+      state: {
+        type: String,
+        required: true,
+      },
+      country: {
+        type: String,
+        required: true,
+      },
+      postal: {
+        type: Number,
+        required: true,
+      },
+      landmark: {
+        type: String,
+      },
+    },
 
-    // eventlocation: {
-    //   address: {
-    //     type: String,
-    //     required: true,
-    //   },
-    //   city: {
-    //     type: String,
-    //     required: true,
-    //   },
-    //   district: {
-    //     type: String,
-    //     required: true,
-    //   },
-    //   country: {
-    //     type: String,
-    //     required: true,
-    //   },
-    // },
+    thumbnail: {
+      data: Buffer,
+      type: String,
+    },
 
-    // images: [
-    //   {
-    //     data: Buffer,
-    //     type: String,
-    //   },
-    // ],
+    images: [
+      {
+        data: Buffer,
+        type: String,
+      },
+    ],
 
     desc: {
       type: String,
@@ -60,26 +66,33 @@ const EventsSchema = new Schema(
       trim: true,
     },
 
-    // host: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: "hosts",
-    //   required: true
-    // }
+    host: {
+      type: Schema.Types.ObjectId,
+      ref: "Host",
+      required: true,
+    },
 
-    // type: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
+    isHeld: {
+      type: Boolean,
+      default: false,
+    },
 
-    // volunteers: [
-    //   {
-    //     volunteerID: {
-    //       type: Schema.Types.ObjectID,
-    //       ref: "volunteers",
-    //       required: true,
-    //     },
-    //   },
-    // ],
+    isCancelled: {
+      type: Boolean,
+      default: false,
+    },
+
+    type: {
+      type: String,
+      trim: true,
+    },
+
+    volunteers: [
+      {
+        type: Schema.Types.ObjectID,
+        ref: "Volunteer",
+      },
+    ],
   },
   {
     timestamps: true,
