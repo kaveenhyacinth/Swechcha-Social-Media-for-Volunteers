@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Icon image using -->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--Using  BootstrapCSS-->
+<link rel="stylesheet" type="text/css" href="/assets/styles/bootstrap.min.css">
+<!--Using Fonts-->
+	<link rel="stylesheet" type="text/css" href="/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--Using Icon Font -->
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    
+<!--Using Animate CSS-->
+	<link rel="stylesheet" type="text/css" href="/assets/styles/animate.css">
+
+
+<!--Using HAmburgers CSS-->	
+	<link rel="stylesheet" type="text/css" href="/assets/styles/hamburgers.min.css">
+
+<!--Using Select CSS-->
+	<link rel="stylesheet" type="text/css" href="/assets/styles/select2.min.css">
+
+
+
+<!--Using Util css  and main css-->
+	<link rel="stylesheet" type="text/css" href="/assets/styles/util.css">
+	<link rel="stylesheet" type="text/css" href="/assets/styles/orgreg.css">
+</head>
+<!-- Start of Register-->
+<body>
+	
+	<div class="limiter">
+		<div class="container-register100">
+			<div class="wrap-register100 p-l-50 p-r-50 p-t-77 p-b-30">
+				<form class="register100-form validate-form">
+					<span class="register100-form-title p-b-55">
+					<h2>Organization &nbsp;Register </h2>
+					</span>
+		
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Organization Name Required">
+						<input class="input100" type="text" name="pass" placeholder="Organization Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-users" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Organization Address Required">
+						<input class="input100" type="text-area" name="Address Line 1" placeholder="Organization Address ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-home" aria-hidden="true"></i>
+						</span>
+					</div>
+						
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "City Required">
+						<input class="input100" type="text" name="City" placeholder="City">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+						<i class="fa fa-building" aria-hidden="true"></i>
+ 
+
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "District Required">
+						<label>District  &nbsp;<i class="fa fa-map-marker" aria-hidden="true"></i></label><br>
+						<select id="Districts">
+							<option value="Select">Select</option>
+							 <option value="Ampara">Ampara</option>
+							 <option value="Anuradhapura">Anuradhapura</option>
+							 <option value="Badulla">Badulla</option>
+							 <option value="Batticaloa">Batticaloa</option>
+							 <option value="Colombo">Colombo</option>
+							 <option value="Galle">Galle</option>
+							 <option value="Gampaha">Gampaha</option>
+							 <option value="Hambantota">Hambantota</option>
+							 <option value="Jaffna">Jaffna</option>       
+							 <option value="Kalutara">Kalutara</option>
+							 <option value="Kandy">Kandy</option>
+							 <option value="Kegalle">Kegalle</option>
+							 <option value="Kilinochchi">Kilinochchi</option>
+							 <option value="Kurunegala">Kurunegala</option>
+							 <option value="Mannar">Mannar</option>
+							 <option value="Matale">Matale</option>
+							 <option value="Matara">Matara</option>
+							 <option value="Monaragala">Monaragala</option>
+							 <option value="Mulativu">Mulativu</option>
+							 <option value="Nuwara Eliya">Nuwara Eliya</option>
+							 <option value="Polonnaruwa">Polonnaruwa</option>
+							 <option value="Puttalam">Puttalam</option>
+							   <option value="Ratnapura">Ratnapura</option>
+								<option value="Trincomalee">Trincomalee</option>
+								 <option value="Vavuniya">Vavuniya</option>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+							</select>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Postal code Required">
+						<input class="input100" type="text" name="Postal code" placeholder="Postal code">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16"data-validate = "phone number Required">
+						<input class="input100" type="text"  id="tdnumbers" value"" onkeypress="javascript:return isNumber(event)" name="Contact Number" placeholder="Contact Number">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-phone" aria-hidden="true"></i>
+						</span>
+						<script>
+							//  VALIDATION SCRIPT.
+							function isNumber(evt) {
+								var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+								if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+									return false;
+						
+								return true;
+							}    
+						</script>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Company state Required">
+						<input class="input100" type="text" name="Company state" placeholder="Company State">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="email" name="Company Email" placeholder="Company Email ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<!--Password Validation-->
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<!--Password Validation-->
+					<div  class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Confirm Password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Image Required">
+						<label>Company Logo &nbsp;<i class="fa fa-file-image-o" aria-hidden="true"></i></label>
+						<input class="input50" type="file" name="Image" placeholder="Company Image ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							
+						</span>
+					</div>
+					<div class="container col-8">
+						<div class="form-group"data-validate="Description required=">
+						  <br>
+						  <textarea class="form-control input100"  placeholder="Company Description" rows="5" id="comment"></textarea>
+						</div>
+					
+					<div class="container-register100-form-btn p-t-25">
+						<button class="register100-form-btn">
+							Register
+						</button>
+					</div>
+					
+					<div class="text-center w-full p-t-115">
+						<span class="txt1">
+							<h3>Already a member?</h3>
+						</span>
+						<a class="txt1 bo1 hov1" hre66f="#">
+							<h3>Login now</h3>							
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+<!--Using JQuery Scripts-->	
+
+<script src="/assets/src/jquery-3.2.1.min.js"></script>
+
+
+<!--Using bootstrap Scripts-->
+
+	<script src="/assets/src/popper.js"></script>
+	<script src="/assets/src/bootstrap.min.js"></script>
+
+
+<!--Using Select Scripts-->
+
+	<script src="/assets/src/select2.min.js"></script>
+
+
+<!--Using Main Javascript-->
+
+	<script src="/assets/src/main.js"></script>
+	
+
+	
+
+</body>
+</html>
