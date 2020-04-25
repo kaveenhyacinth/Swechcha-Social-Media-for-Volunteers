@@ -34,14 +34,14 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="/auth/volunteer/signin">
 					<span class="login100-form-title p-b-55">
 						Login
 					</span>
 
 					<!-- Used a Validation-->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" required name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
@@ -49,7 +49,7 @@
 					</div>
 					<!--Password Validation-->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" required name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
@@ -68,6 +68,7 @@
 							Login
 						</button>&nbsp;
 					</div>
+				</form>
 					<a class="txt1 bo1 hov1" href="#">
 						Forgot Password ?						
 					</a>
@@ -91,17 +92,17 @@
 
 				
 						<span class="display-5">Not a member ?</span>
-						<a " class="txt1 bo1 hov1" href="#"> <span class="display-5 btn btn-sm btn-success">
+						<a " class="txt1 bo1 hov1" href="/register/volunteer"> <span class="display-5 btn btn-sm btn-success">
 							 Sign up now</span>						
 						</a>
 						
 					
-						<a href="/" class="btn-home m-b-10 btn btn-sm btn-primary">
+						<a href="/home" class="btn-home m-b-10 btn btn-sm btn-primary">
 							<i class="fa fa-home"></i>
 							Home
 						</a>
 					</div>
-				</form>
+				
 			</div>
 		</div>
 	</div>

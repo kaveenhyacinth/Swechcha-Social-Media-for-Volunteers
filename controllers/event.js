@@ -10,6 +10,17 @@ const read = (req, res) => {
     .catch((err) => res.status(400).json("Error " + err));
 };
 
+//Home page slider*****
+const homeEventRead = (req, res) => {
+  Event.find()
+    .limit(3)
+    .sort({createdAt: -1})
+    .populate("host", "hostname email")
+    // .populate('volunteers')
+    .then((data) => res.json(data))
+    .catch((err) => res.status(400).json("Error " + err));
+};
+
 // Get event data
 const findById = (req, res) => {
   var eventId = req.params.id;

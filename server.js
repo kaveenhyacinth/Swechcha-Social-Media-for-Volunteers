@@ -12,6 +12,7 @@ const hostRouter = require("./routes/host");
 const adminRouter = require("./routes/admin");
 const authRouter = require("./routes/auth");
 const assignRouter = require("./routes/assign");
+const indexRouter = require("./routes/index");
 
 // const tests = require("./tests/session");
 
@@ -48,30 +49,26 @@ app.use("/host", hostRouter);
 app.use("/admin", adminRouter);
 app.use("/auth", authRouter);
 app.use("/add", assignRouter);
+app.use("/", indexRouter);
 
 // app.use('/test', tests);
 
-//**************** */
-app.get('/',function(req, res){
-  res.send('WTF');
+// Database uri
+const uri = process.env.ATLAS_URI;
+
+// Database connection
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
 });
-//**************** */
-// // Database uri
-// const uri = process.env.ATLAS_URI;
 
-// // Database connection
-// mongoose.connect(uri, {
-//   useNewUrlParser: true,
-//   useCreateIndex: true,
-//   useUnifiedTopology: true,
-//   useFindAndModify: false,
-// });
-
-// // Deploy DB connection
-// const connection = mongoose.connection;
-// connection.once("open", () => {
-//   console.log("Connected to mongoDB");
-// });
+// Deploy DB connection
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("Connected to mongoDB");
+});
 
 
 // Set port to listen

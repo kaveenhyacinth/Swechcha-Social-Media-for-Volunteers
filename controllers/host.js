@@ -8,7 +8,9 @@ const findById = (req, res) => {
   // Render to view when updated
   Host.findById(id)
     .populate("eventsHosted", "eventname desc")
-    .then((data) => res.json(data))
+    .then((data) => {
+      res.render('org_timeline',{data : data});
+    })
     .catch((err) => res.status(400).json("Error " + err));
 };
 

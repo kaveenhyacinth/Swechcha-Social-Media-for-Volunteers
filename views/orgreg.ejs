@@ -35,41 +35,44 @@
 	<div class="limiter">
 		<div class="container-register100">
 			<div class="wrap-register100 p-l-50 p-r-50 p-t-77 p-b-30">
-				<form class="register100-form validate-form">
+				<form class="register100-form validate-form" method="POST" action="/auth/host/signup">
 					<span class="register100-form-title p-b-55">
-					<h2>Organization &nbsp;Register </h2>
+					<h2>Host &nbsp;Register </h2>
 					</span>
 		
-					
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Organization Name Required">
-						<input class="input100" type="text" name="pass" placeholder="Organization Name">
+					<!-- Host name as hostname -->
+					<div class="wrap-input100 validate-input m-b-16" data-validate ="Host Name Required">
+						<input class="input100" type="text" name="hostname" placeholder="Host Name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-users" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Organization Address Required">
-						<input class="input100" type="text-area" name="Address Line 1" placeholder="Organization Address ">
+					<!-- Streetaddress as street -->
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "street Address Required">
+						<input class="input100" type="text-area" name="street" placeholder="Street Address ">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-home" aria-hidden="true"></i>
 						</span>
 					</div>
 						
+					<!-- City as city -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "City Required">
-						<input class="input100" type="text" name="City" placeholder="City">
+						<input class="input100" type="text" name="city" placeholder="City">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 						<i class="fa fa-building" aria-hidden="true"></i>
- 
-
+						
 						</span>
+
 					</div>
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "District Required">
-						<label>District  &nbsp;<i class="fa fa-map-marker" aria-hidden="true"></i></label><br>
-						<select id="Districts">
-							<option value="Select">Select</option>
+
+					<!-- District as state -->
+					<div class="wrap-input100  validate-input m-b-16" data-validate = "District Required">
+						<select id="Districts" class="input100" name="state">	
+							<option hidden >District</option>
 							 <option value="Ampara">Ampara</option>
 							 <option value="Anuradhapura">Anuradhapura</option>
 							 <option value="Badulla">Badulla</option>
@@ -96,38 +99,24 @@
 								<option value="Trincomalee">Trincomalee</option>
 								 <option value="Vavuniya">Vavuniya</option>
 							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
+
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 						</span>
 					</div>
 					
+					<!-- Postal code as postal -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Postal code Required">
-						<input class="input100" type="text" name="Postal code" placeholder="Postal code">
+						<input class="input100" type="text" name="postal" placeholder="Postal code">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope-open-o" aria-hidden="true"></i>
 						</span>
 					</div>
+
+					<!-- phone no as contactNo -->
 					<div class="wrap-input100 validate-input m-b-16"data-validate = "phone number Required">
-						<input class="input100" type="text"  id="tdnumbers" value"" onkeypress="javascript:return isNumber(event)" name="Contact Number" placeholder="Contact Number">
+						<input class="input100" type="text"  id="tdnumbers" onkeypress="javascript:return isNumber(event)" name="contactNo" placeholder="Contact Number">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-phone" aria-hidden="true"></i>
@@ -143,25 +132,46 @@
 							}    
 						</script>
 					</div>
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Company state Required">
-						<input class="input100" type="text" name="Company state" placeholder="Company State">
+					<!-- nic as NIC -->
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "NIC Required">
+						<input class="input100" type="text" name="NIC" placeholder="National Identity No">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							<i class="fa fa-id-card-o" aria-hidden="true"></i>
 						</span>
 					</div>
 					
+					<!-- dob as DOB -->
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "date required">
+						<label>Date of Birth :&nbsp;</label>
+						<br>
+						<i class="fa fa-birthday-cake" aria-hidden="true"></i>
+						<input class="input50" type="date" required name="DOB"  placeholder="Date of Birth ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+					
+						</span>
+					</div>
+					<!-- Email as email -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="email" name="Company Email" placeholder="Company Email ">
+						<input class="input100" type="email" required name="email" placeholder="E-mail">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope-o" aria-hidden="true"></i>
 						</span>
 					</div>
+					<!-- Country as country -->
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Country">
+						<input class="input100" type="country" name="country" placeholder="Country ">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-globe" aria-hidden="true"></i>
+						</span>
+					</div>
 
 					<!--Password Validation-->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" minlength="6" required name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -170,26 +180,14 @@
 
 					<!--Password Validation-->
 					<div  class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Confirm Password">
+						<input class="input100" type="password" required minlength="6" name="pass" placeholder="Confirm Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Image Required">
-						<label>Company Logo &nbsp;<i class="fa fa-file-image-o" aria-hidden="true"></i></label>
-						<input class="input50" type="file" name="Image" placeholder="Company Image ">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							
-						</span>
-					</div>
-					<div class="container col-8">
-						<div class="form-group"data-validate="Description required=">
-						  <br>
-						  <textarea class="form-control input100"  placeholder="Company Description" rows="5" id="comment"></textarea>
-						</div>
+					
 					
 					<div class="container-register100-form-btn p-t-25">
 						<button class="register100-form-btn">
@@ -206,6 +204,15 @@
 						</a>
 					</div>
 				</form>
+				<div class="container">
+					<div class="row">
+						<div style="margin-left:40%">
+						<a href="/home" class="mt-3 btn-home m-b-10  btn btn-lg btn-primary">
+							<i class="fa fa-home"></i>
+							Home
+						</a></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -213,23 +220,23 @@
 
 <!--Using JQuery Scripts-->	
 
-<script src="/assets/src/jquery-3.2.1.min.js"></script>
+<script src="/src/jquery-3.2.1.min.js"></script>
 
 
 <!--Using bootstrap Scripts-->
 
-	<script src="/assets/src/popper.js"></script>
-	<script src="/assets/src/bootstrap.min.js"></script>
+	<script src="/src/popper.js"></script>
+	<script src="/src/bootstrap.min.js"></script>
 
 
 <!--Using Select Scripts-->
 
-	<script src="/assets/src/select2.min.js"></script>
+	<script src="/src/select2.min.js"></script>
 
 
 <!--Using Main Javascript-->
 
-	<script src="/assets/src/main.js"></script>
+	<script src="/src/main.js"></script>
 	
 
 	

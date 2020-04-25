@@ -45,6 +45,7 @@
                         <a href="#" class="nav-link">Login</a>
                     </li> -->
                 </ul>
+                <input type="button" value="Logout" class="btn-lg btn-danger" onclick="window.location.href='/auth/signout'">
                 <form class="form-inline my-2 my-lg-0">
                     <!-- <button class="btn menu-right-btn border" type="submit">
                         Register 
@@ -62,11 +63,12 @@
                 <div class="inner"></div>
             </div>
             <div class="lef-col-con">
-                <h1>@Dylan Malitha</h1>
-                <h2>Volunteer</h2>
+                <h1>@ <%=data.hostname%></h1>
+                <h2>Host</h2>
                 <div class="meta">
-                    <p><i class="fa fa-fw fa-map-marker"></i> Australia</p>
-                    <p><i class="fa fa-fw fa-clock-o"></i> Joined Dec 26, 2008</p>
+                    <%var x = data.createdAt.toString()%>
+                    <p><i class="fa fa-fw fa-map-marker"></i> <%=data.address.city +", "+data.address.state%></p>
+                    <p><i class="fa fa-fw fa-clock-o"></i>Joined : <%=x.slice(4,15)%></p>
                 </div>
                 <div class="info">
                     <h4>Other</h4>

@@ -36,14 +36,14 @@
 	<div class="limiter">
 		<div class="container-register100">
 			<div class="wrap-register100 p-l-50 p-r-50 p-t-77 p-b-30">
-				<form class="register100-form validate-form">
+				<form class="register100-form validate-form" method="POST" action="/auth/volunteer/signup" >
 					<span class="register100-form-title p-b-55">
 					<h1>Register Form</h1>
 					</span>
 		
-					
+					<!-- First name as fname -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "First Name Required">
-						<input class="input100" type="text" name="text" placeholder="First Name">
+						<input class="input100" type="text" name="fname" placeholder="First Name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user-o" aria-hidden="true"></i>
@@ -51,8 +51,9 @@
 						</span>
 					</div>
 
+					<!-- Last name as lname -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Last Name Required">
-						<input class="input100" type="text" name="text" placeholder="Last Name">
+						<input class="input100" type="text" name="lname" placeholder="Last Name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user-o" aria-hidden="true"></i>
@@ -60,52 +61,60 @@
 						</span>
 					</div>
 						
+					<!-- NIC as NIC -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "NIC Number Required">
-						<input class="input100" type="text" name="text" placeholder="NIC Number">
+						<input class="input100" type="text" name="NIC" placeholder="NIC Number">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 						<i class="fa fa-id-card-o" aria-hidden="true"></i>
 
 						</span>
 					</div>
+
+					<!-- DOB as DOB -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "date required">
 						<label>Date of Birth :&nbsp;</label>
 						<br>
 						<i class="fa fa-birthday-cake" aria-hidden="true"></i>
-						<input class="input50" type="date" name="Image"  placeholder="Date of Birth ">
+						<input class="input50" type="date" name="DOB" required placeholder="Date of Birth ">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 					
 						</span>
 					</div>
+					<!-- Address as street -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Address Required">
-						<input class="input100" type="text" name="Address Line 1" placeholder="Address ">
+						<input class="input100" type="text" name="street" placeholder="Address ">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-home" aria-hidden="true"></i>
 						</span>
 					</div>
+
+					<!-- Postal Code as postal -->
 					<div class="wrap-input100 validate-input m-b-16">
-						<input class="input100" type="text" name="Postal Code" placeholder="Postal Code ">
+						<input class="input100" type="text" name="postal" placeholder="Postal Code ">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope-open-o" aria-hidden="true"></i>
 						</span>
 					</div>
+					<!-- City as city -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "City Required">
-						<input class="input100" type="text" name="City" placeholder="City ">
+						<input class="input100" type="text" name="city" placeholder="City ">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-building" aria-hidden="true"></i>
 						</span>
 					</div>
+					<!-- district as state -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "District Required">
 						<label>District  &nbsp;<i class="fa fa-map-marker" aria-hidden="true"></i></label><br>
-						<select id="Districts">
-							<option value="Select">Select</option>
+						<select id="Districts" name="state" required>
+							<option hidden>Select</option>
 							 <option value="Ampara">Ampara</option>
 							 <option value="Anuradhapura">Anuradhapura</option>
-							 <option value="Badulla">Badullla</option>
+							 <option value="Badulla">Badulla</option>
 							 <option value="Batticaloa">Batticaloa</option>
 							 <option value="Colombo">Colombo</option>
 							 <option value="Galle">Galle</option>
@@ -129,39 +138,26 @@
 								<option value="Trincomalee">Trincomalee</option>
 								 <option value="Vavuniya">Vavuniya</option>
 							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
-							</select>
+							
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							
 
 						</span>
 					</div>
+
+					<!-- Country as country -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Country">
-						<input class="input100" type="text" name="Country" placeholder="Country ">
+						<input class="input100" type="country" name="country" placeholder="Country ">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-globe" aria-hidden="true"></i>
 						</span>
 					</div>
+
+					<!-- Phone as contactNo -->
 					<div class="wrap-input100 validate-input m-b-16"data-validate = "phone number Required">
-						<input class="input100" type="text"  id="tdnumbers" value"" onkeypress="javascript:return isNumber(event)" name="Contact Number" placeholder="Contact Number">
+						<input class="input100" type="tel"  id="tdnumbers"  onkeypress="javascript:return isNumber(event)" name="contactNo" placeholder="Contact Number">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-phone" aria-hidden="true"></i>
@@ -178,6 +174,7 @@
 						</script>
 					</div>
 						<!-- Used a Validation-->
+						<!-- Email as email -->
 						<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
 							<input class="input100" type="email" name="email" placeholder="Email">
 							<span class="focus-input100"></span>
@@ -185,17 +182,20 @@
 								<i class="fa fa-envelope-o" aria-hidden="true"></i>
 							</span>
 						</div>
+
+						<!-- Job as profession -->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "State Required">
-						<input class="input100" type="text" name="State" placeholder="Profession State "> 
+						<input class="input100" type="text" name="profession" placeholder="Profession State "> 
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-briefcase" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<!--Password Validation-->
+					<!--Password Validation--> 
+					<!-- Password as password [Getting only one is enough because of compaired field validation]-->
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" minlength="6" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -204,7 +204,7 @@
 
 					<!--Password Validation-->
 					<div  class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Confirm Password">
+						<input class="input100" type="password" minlength="6" name="pass" placeholder="Confirm Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -212,11 +212,11 @@
 					</div>
 					
 					<div class="container-register100-form-btn p-t-25">
-						<button class="register100-form-btn">
+						<button class="register100-form-btn" type="submit">
 							Register
 						</button>
 					</div>
-					
+				</form>
 					<div class="text-center w-full p-t-42 p-b-22">
 						<span class="txt1">
 							Or Register with
@@ -235,7 +235,7 @@
 					<div class="container">
 						<div class="row">
 							<div style="margin-left:40%">
-							<a href="/" class="mt-3 btn-home m-b-10  btn btn-lg btn-primary">
+							<a href="/home" class="mt-3 btn-home m-b-10  btn btn-lg btn-primary">
 								<i class="fa fa-home"></i>
 								Home
 							</a></div>
@@ -245,11 +245,11 @@
 						<span class="txt1">
 							<h3>Already a member?</h3>
 						</span>
-						<a class="txt1 bo1 hov1" href="#">
+						<a class="txt1 bo1 hov1" href="/login">
 							<h3>Login now</h3>							
 						</a>
 					</div>
-				</form>
+				
 			</div>
 		</div>
 	</div>
@@ -257,23 +257,23 @@
 
 <!--Using JQuery Scripts-->	
 
-<script src="/assets/src/jquery-3.2.1.min.js"></script>
+<script src="/src/jquery-3.2.1.min.js"></script>
 
 
 <!--Using bootstrap Scripts-->
 
-	<script src="/assets/src/popper.js"></script>
-	<script src="/assets/src/bootstrap.min.js"></script>
+	<script src="/src/popper.js"></script>
+	<script src="/src/bootstrap.min.js"></script>
 
 
 <!--Using Select Scripts-->
 
-	<script src="/assets/src/select2.min.js"></script>
+	<script src="/src/select2.min.js"></script>
 
 
 <!--Using Main Javascript-->
 
-	<script src="/assets/src/main.js"></script>
+	<script src="/src/main.js"></script>
 	
 
 	

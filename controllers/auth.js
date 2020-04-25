@@ -4,12 +4,14 @@ const Volunteer = require("../models/volunteer.model");
 const Host = require("../models/host.model");
 const Admin = require("../models/admin.model");
 
+
+
 /** Volunteer **/
 
 // Volunteer signin
 const volunteerSignin = async (req, res) => {
-  var uname = req.body.uname;
-  var pass = req.body.pass;
+  var uname = req.body.email;
+  var pass = req.body.password;
 
   // Get login credentials
   Volunteer.findOne({
@@ -26,16 +28,41 @@ const volunteerSignin = async (req, res) => {
         res.redirect("/volunteer/" + data._id);
       } else {
         req.session.signed = false;
-        res.send("please enter valid credentials");
+        res.redirect(301,"/userlogin");
+        //res.send("please enter valid credentials");
       }
     }) // redirect to Volunteer data
-    .catch((err) => res.status(400).json("Error " + err));
+    .catch((err) => res.redirect('/userlogin'));
 };
 
 // Volunteer signup
 const volunteerSignup = async (req, res) => {
   var pass = req.body.password;
-  var volunteer = req.body;
+  //var volunteer = req.body;
+/*New*/
+var name = {
+  fname: req.body.fname,
+  lname: req.body.lname
+};
+var address = {
+  street: req.body.street,
+  city: req.body.city,
+  state: req.body.state,
+  country: req.body.country,
+  postal: req.body.postal
+};
+
+var volunteer = {
+  name : name,
+  email : req.body.email,
+  password : req.body.password,
+  NIC : req.body.NIC,
+  DOB : req.body.DOB,
+  address : address,
+  contactNo : req.body.contactNo,
+  profession : req.body.profession
+};
+/*End*/ 
 
   const hashedPass = await bcrypt.hash(pass, 10);
 
@@ -44,6 +71,7 @@ const volunteerSignup = async (req, res) => {
   var newVolunteer = new Volunteer(volunteer);
 
   console.log(newVolunteer);
+ 
 
   newVolunteer
     .save()
@@ -52,19 +80,22 @@ const volunteerSignup = async (req, res) => {
         (data) => {
           Volunteer.findById(data._id)
             .then((data) => res.json(data))
-            .catch((err) => res.status(400).json("Error " + err));
+            .catch((err) => res.status(400).json("Error 1" + err));
         }
+        
       );
     })
-    .catch((err) => res.status(400).json("Error " + err));
+    .catch((err) => res.status(400).json("Error 2" + err));
+    //res.render('userlogin');
+    res.redirect(301,'/userlogin');
 };
 
 /** Host **/
 
 // Host signin
 const hostSignin = async (req, res) => {
-  var uname = req.body.uname;
-  var pass = req.body.pass;
+  var uname = req.body.email;
+  var pass = req.body.password;
 
   // Get login credentials
   Host.findOne({
@@ -88,8 +119,29 @@ const hostSignin = async (req, res) => {
 
 // Host signup
 const hostSignup = async (req, res) => {
+
   var pass = req.body.password;
-  var host = req.body;
+  //var volunteer = req.body;
+/*New*/
+var address = {
+  street: req.body.street,
+  city: req.body.city,
+  state: req.body.state,
+  country: req.body.country,
+  postal: req.body.postal
+};
+
+var host = {
+  hostname : req.body.hostname,
+  email : req.body.email,
+  password : req.body.password,
+  NIC : req.body.NIC,
+  DOB : req.body.DOB,
+  address : address,
+  contactNo : req.body.contactNo,
+  profession : req.body.profession
+};
+/*End*/ 
 
   const hashedPass = await bcrypt.hash(pass, 10);
 
@@ -111,6 +163,7 @@ const hostSignup = async (req, res) => {
       );
     })
     .catch((err) => res.status(400).json("Error " + err));
+    res.redirect(301,'/userlogin');
 };
 
 /** Admin **/
@@ -141,9 +194,14 @@ const adminSignin = async (req, res) => {
 };
 
 // Admin signup
+/*
 const adminSignup = async (req, res) => {
-  var pass = req.body.password;
-  var admin = req.body;
+  var pass = "password";
+  var admin = {
+    username: "admin",
+    email: "admin@swechcha.lk",
+    password: "1234567890"
+  };
 
   const hashedPass = await bcrypt.hash(pass, 10);
 
@@ -165,12 +223,12 @@ const adminSignup = async (req, res) => {
       );
     })
     .catch((err) => res.status(400).json("Error " + err));
-};
+};*/
 
 // Signout
 const signout = (req, res) => {
   req.session.destroy(() => {
-    res.redirect('/event');
+    res.redirect('/home');
   });
 };
 
@@ -178,7 +236,7 @@ module.exports = {
   volunteerSignin,
   volunteerSignup,
   adminSignin,
-  // adminSignup,
+  //adminSignup,
   hostSignin,
   hostSignup,
   signout,

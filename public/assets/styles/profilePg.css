@@ -104,12 +104,14 @@ html {
     background-color: #f5f5f5;
     background-size: cover; 
     z-index: 1;
-    background-image: url(http://placekitten.com/980/250);
+    /* background-image: url(https://valterlongo.com/wp-content/uploads/2019/09/donation-cover.jpg); */
   }
   .cover-photo a i{
+    position: relative;
     margin-top: 30.5%;
     margin-left: 83%;
    font-size: 20px;
+   
   }
   .cover-photo a i:hover{
    color: gray;
@@ -188,7 +190,7 @@ html {
     width: 206px;
     height: 206px;
     margin: 5px;
-    background-image: url(http://placekitten.com/220/220);
+    /* background-image: url(http://placekitten.com/220/220); */
   }
   .profile-avatar .inner .change a i{
     margin-top: 95%;
@@ -211,7 +213,7 @@ html {
     margin-bottom: 2%;
     height: 0;
     padding-bottom: 30%;
-    background-image: url(http://placekitten.com/200/200);
+    /* background-image: url(http://placekitten.com/200/200); */
     -webkit-background-size: 100%;
     background-size: 100%;
   }
@@ -221,6 +223,15 @@ html {
   
   /* Style the buttons */
   .btn {
+    border: none;
+    outline: none;
+    padding: 12px 26px;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .btnn {
     border: none;
     outline: none;
     padding: 12px 26px;

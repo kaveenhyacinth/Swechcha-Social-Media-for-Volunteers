@@ -81,13 +81,13 @@ const VolunteerSchema = new Schema(
     },
 
     profileImage: {
-      data: Buffer,
-      contentType: String,
+      data: String,
+     // contentType: String,
     },
 
     coverImage: {
-      data: Buffer,
-      contentType: String,
+      data: String,
+     // contentType: String,
     },
 
     eventsJoined: [

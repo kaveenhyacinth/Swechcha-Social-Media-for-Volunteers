@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type = "text/javascript" >
+        function preventBack(){window.history.forward();}
+         setTimeout("preventBack()", 0);
+         window.onunload=function(){null};
+     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/85bcb2089a.js" crossorigin="anonymous"></script>
@@ -10,9 +15,9 @@
     <script src="/src/profile.js"></script> <!--JS file-->
     
 
-
+   
     
-    <title>TimeLine</title>
+    <title><%=data.name.fname +"'s "%> [ Profile ]</title>
 </head>
 <body>
     <header> <!--this header contain the navigation bar code-->
@@ -23,24 +28,9 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse"></div>
-            <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Contact Us</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a href="#" class="nav-link">Login</a>
-                    </li> -->
-                </ul>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+          
+                <input type="button" value="Logout" class="btn-lg btn-danger" onclick="window.location.href='/auth/signout'">
                 <form class="form-inline my-2 my-lg-0">
                     <!-- <button class="btn menu-right-btn border" type="submit">
                         Register 
@@ -51,29 +41,28 @@
     </header>
 
     
-    <div class="cover-photo"></div>
+    <div class="cover-photo"style="background-image: url(/assets/users/cover/<%=data.coverImage%>); background-repeat: no-repeat;"></div>
     <div class="body">
         <section class="left-col user-info">
-            <div class="profile-avatar">
-                <div class="inner"></div>
+            <div class="profile-avatar" style="background-image: url(/assets/users/dp/<%=data.profileImage%>); background-repeat: no-repeat;
+                background-size: 216px 216px;">
             </div>
             <div class="lef-col-con">
-                <h1>@Dylan Malitha</h1>
+                <h1>@<%=data.name.fname +" "+ data.name.lname%></h1>
                 <h2>Volunteer</h2>
                 <div class="meta">
-                    <p><i class="fa fa-fw fa-map-marker"></i> Australia</p>
-                    <p><i class="fa fa-fw fa-clock-o"></i> Joined Dec 26, 2008</p>
+                    <%var x = data.createdAt.toString()%>
+                    <p><i class="fa fa-fw fa-map-marker"></i> <%=data.address.city+ ", "+ data.address.state%></p>
+                    <p><i class="fa fa-fw fa-clock-o"></i> Joined : <%=x.slice(4,15)%></p>
                 </div>
                 <div class="info">
                     <h4>Other</h4>
                     <h3>Souls:</h3>
-                    <p>259</p>
+                    <p>0</p>
                     <h3>Circles:</h3>
-                    <p>5</p>
+                    <p>0</p>
                     <h3>Events:</h3>
-                    <p>45</p>
-                    <h3>Host</h3>
-                    <p>3</p>
+                    <p>0</p>
                 </div>
             </div>
         </section>
@@ -81,12 +70,15 @@
         <section class="section center-col content">
         
             <!-- In tab Nav -->
-            <div id="myDIV">
-                <a href="timeline.html" class="btn active">TimeLine</a>
-                <a href="profilePg.html" class="btn">About</a>
-                <a href="#" class="btn">Friends</a>                
+            <form method="POST" action="/volunteer/about/<%=sess%>">
+            <div id="myDIV " class="mt-2">
+                <a href="#" class="btn active">Home</a>
+              
+                <input type="submit" value="Settings" class="btn">
+            
+                <a href="/events" class="btn">Events</a>                
                 <a href="#" class="btn">Report</a>                
-              </div>
+              </div></form>
               <hr>
              <!-- timeline card container -->
                <div class="card mb-3" style="max-width: 80rem;">

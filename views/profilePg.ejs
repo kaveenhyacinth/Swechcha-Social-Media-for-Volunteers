@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/styles/profilePg.css"> <!-- link to css -->
     <script defer src="/src/profile.js"></script> <!--link to JS -->
-    <title>Profile</title>
+    
+    <title><%=data.name.fname +"'s "%> [ Settings ]</title>
 </head>
 <body>
     <header> <!--this header contain the navigation bar code-->
@@ -19,24 +20,9 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse"></div>
-            <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Home</a> <!--Link this to home.html page-->
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- <a href="#" class="nav-link">About Us</a> -->
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- <a href="#" class="nav-link">Login</a> -->
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+                <input type="button" value="Logout" class="btn-lg btn-danger" onclick="window.location.href='/auth/signout'">
+                
                 <form class="form-inline my-2 my-lg-0">
                     <!-- <button class="btn menu-right-btn border" type="submit">
                         Register 
@@ -47,36 +33,39 @@
     </header>
 
     
-    <div class="cover-photo">
-            <a id="coverbtn"><i class="fas fa-plus-circle" ></i></a>
+    <div class="cover-photo"  style="background-image: url(/assets/users/cover/<%=data.coverImage%>); background-repeat: no-repeat;"><a id="coverbtn" >
+        <i class="fas fa-plus-circle" style="color:white;"></i></a>
     </div>
     <div class="body">
         <section class="left-col user-info">
-            <div class="profile-avatar">
+            <div class="profile-avatar" style="background-image: url(/assets/users/dp/<%=data.profileImage%>); background-repeat: no-repeat;
+                background-size: 216px 216px;">
+                <!-- <img src="/assets/images/card3.jpg" class="card-img-top"> -->
                 <div class="inner">
+                    
                     <div class="change">
                         <a id="probtn"><i class="fas fa-plus-circle"></i></a>
                     </div>
-                    
+                
                 </div>
             </div>
             <div class="lef-col-con">
-                <h1>@Dylan Malitha</h1>
+                <!-- Full Name -->
+                <h1><%="@" + data.name.fname + " " + data.name.lname%></h1>
                 <h2>Volunteer</h2>
                 <div class="meta">
-                    <p><i class="fa fa-fw fa-map-marker"></i> Australia</p>
-                    <p><i class="fa fa-fw fa-clock-o"></i> Joined Dec 26, 2008</p>
+                    <p><i class="fa fa-fw fa-map-marker"></i> <%=data.address.city+ ", "+ data.address.state%></p>
+                    <p><i class="fa fa-fw fa-clock-o"></i>
+                        <%=data.createdAt.toString().slice(4,15)%></p>
                 </div>
                 <div class="info">
                     <h4>Other</h4>
                     <h3>Souls:</h3>
-                    <p>259</p>
+                    <p>0</p>
                     <h3>Circles:</h3>
-                    <p>5</p>
+                    <p>0</p>
                     <h3>Events:</h3>
-                    <p>45</p>
-                    <h3>Host</h3>
-                    <p>3</p>
+                    <p>0</p>
                 </div>
             </div>
         </section>
@@ -84,10 +73,10 @@
         <section class="section center-col content">
         
             <!-- Nav -->
-            <div id="myDIV">
-                <a href="timeline.html" class="btn">TimeLine</a>
-                <a href="profilePg.html" class="btn active">About</a>
-                <a href="" class="btn">Friends</a>                
+            <div id="myDIV" class="mt-2">
+                <a href="/volunteer/<%=sess%>" class="btn">Home</a>
+                <a href="#" class="btn active">Settings</a>
+                <a href="" class="btn">Events</a>                
                 <a href="" class="btn">Report</a>                
               </div>
                 <hr>
@@ -96,86 +85,86 @@
                     <div class="row my-2">
                         <!-- edit form column -->
                         <div class="col-lg-8 order-lg-1 personal-info">
-                            <form role="form">
+                            <form role="form" action="/volunteer/update/<%= sess %>" method="POST">
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">First name</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="Dylan" />
+                                        <input class="form-control" type="text" name="fname" value="<%=data.name.fname%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Last name</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="Malitha" />
+                                        <input class="form-control" type="text" name="lname" value="<%=data.name.lname%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">NIC</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="email" value="1999674532" />
+                                        <input class="form-control" type="text" name="NIC" value="<%=data.NIC%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Date of Birth</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="" />
+                                        <input class="form-control" type="date" name="DOB" value="<%=data.DOB.toISOString().slice(0,10)%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Contact Number</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="url" value="" />
+                                        <input class="form-control" type="text" name="contactNo" value="<%=data.contactNo%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Address</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="" placeholder="Street" />
+                                        <input class="form-control" type="text" name="street" value="<%=data.address.street%>" placeholder="Street" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label"></label>
-                                    <div class="col-lg-6">
-                                        <input class="form-control" type="text" value="" placeholder="City" />
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" name="city" value="<%=data.address.city%>" placeholder="City" />
                                     </div>
-                                    <div class="col-lg-3">
-                                        <input class="form-control" type="text" value="" placeholder="District" />
+                                    <div class="col-lg-4">
+                                        <input class="form-control" type="text" name="state" value="<%=data.address.state%>" placeholder="District" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Postal Code</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="" placeholder="10200" />
+                                        <input class="form-control" type="text" name="postal" value="<%=data.address.postal%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Country</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="" placeholder="Sri Lanka" />
+                                        <input class="form-control" type="text" name="country" value="<%=data.address.country%>" placeholder="Country" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Profesion</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="Software Engineer" />
+                                        <input class="form-control" name="profession" type="text" value="<%=data.profession%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Email</label>
                                     <div class="col-lg-9">
-                                        <input class="form-control" type="text" value="dylan99@gmail.com" />
+                                        <input class="form-control" name="email" type="text" value="<%=data.email%>" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label form-control-label">Password</label>
                                     <div class="col-lg-9">
-                                        <input type="button" class="btn btn-primary active" value="Change password" id="passbtn" / style="height: 45px; ">
+                                        <input type="button" class="btn btn-primary active" value="Change password" id="passbtn" style="height: 45px; ">
                                     </div>
                                 </div>
                                 
                                 <div class="form-group row">
                                     <div class="col-lg-9 ml-auto text-right">
-                                        <input type="button" class="btn btn-primary active" value="Save Changes" / style="margin-top: 10%;">
+                                        <input type="submit" class="btn btn-primary active" value="Save Changes" style="margin-top: 10%;">
                                     </div>
                                 </div>
                             </form>
@@ -190,7 +179,7 @@
       
     </div>
     <!-- form for change password -->
-    <div class="forms">
+    
        <!-- The Modal -->
         <div id="pass" class="modal">
 
@@ -200,28 +189,27 @@
                 <h4 style="margin-top: 3%; margin-bottom: 6%;">To Change Password</h4>
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Current Password</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="password" value="dylan99@gmail.com" />
+                    <div class="col-lg-5">
+                        <input class="form-control" name="current" type="password" value="" />
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">New Password</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="password" value="dylan99@gmail.com" />
+                    <div class="col-lg-5">
+                        <input class="form-control" type="password" value="" />
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label form-control-label">Confirm Password</label>
-                    <div class="col-lg-9">
-                        <input class="form-control" type="password" value="dylan99@gmail.com" />
+                    <div class="col-lg-5">
+                        <input class="form-control" type="password" value="" />
                     </div>
                 </div>
-                <a href="#" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">Change</a>
+                <input type="submit" value="Change" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">
             </div>
         </div>
-    </div>
     <!-- End of form -->
     
 
@@ -229,18 +217,18 @@
     <div class="forms">
         <!-- The Modal -->
          <div id="profi" class="modal">
- 
+            <form action="/volunteer/update/profimg/<%= sess %>" class="form" role="form" method="post" enctype="multipart/form-data">
              <!-- Modal content -->
              <div class="modal-content">
                  <span class="close1">&times;</span>
                  <h4 style="margin-top: 3%; margin-bottom: 6%;">Upload New Profile Image</h4>
                  <div class="Neon Neon-theme-dragdropbox">
-                    <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
+                    <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="img" id="filer_input2" accept=" image/jpeg, image/png" type="file">
                     <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
                     </div>
-                    <a href="#" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">Upload</a>
+                    <input type="submit" value="Change" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">
              </div>
-         </div>
+            </form>
      </div>
      <!-- End of form -->
 
@@ -249,16 +237,18 @@
         <!-- The Modal -->
          <div id="cover_img" class="modal">
  
-             <!-- Modal content -->
-             <div class="modal-content">
-                 <span class="close2">&times;</span>
-                 <h4 style="margin-top: 3%; margin-bottom: 6%;">Upload New Cover Image</h4>
-                 <div class="Neon Neon-theme-dragdropbox">
-                    <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
-                    <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
-                    </div>
-                    <a href="#" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">Upload</a>
-             </div>
+            <form action="/volunteer/update/coverimg/<%= sess %>" class="form" role="form" method="post" enctype="multipart/form-data">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close2">&times;</span>
+                    <h4 style="margin-top: 3%; margin-bottom: 6%;">Upload New Cover Image</h4>
+                    <div class="Neon Neon-theme-dragdropbox">
+                       <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="img" id="filer_input2" accept=" image/jpeg, image/png" type="file">
+                       <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
+                       </div>
+                       <input type="submit" value="Upload" class="btn btn-primary active float-right" style="width: 120px; margin-top: 5%; margin-left: 38%;">
+                </div>
+               </form>
          </div>
      </div>
      <!-- End of form -->

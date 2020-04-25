@@ -4,22 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title>Swechcha Home page</title>
+    <title>Swechcha.org</title>
     
     <!--BootStrap and other links-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" > 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <!-- JavaScript Link -->
-    <script src="/swechcha/public/src/homePg.js"></script>
+    <script src="/src/homePg.js.js"></script>
     <!-- link to css page design -->
-    <link rel="stylesheet" href="/public/assets/styles/homePgstyle.css">  
+    <link rel="stylesheet" href="/assets/styles/homePgstyle.css">  
     <!--link to animation.css-->
-    <link rel="stylesheet" href="/public/assets/styles/animation.css">
+    <style>
+      
+.icon{
+    text-align:center; margin-top:5em
+}
+
+.fa.fa-home, .fa-frown-o, .fa-futbol-o, .fa-heart-o{
+	border-radius: 50%;
+	background:#0b6eee;
+}
+.fa-frown-o{
+    border-radius: 50%;
+	background:#0b6eee;
+}
+.fa-frown-o:hover{
+	background: #EA6212;
+}
+.fa-futbol-o:hover{
+	background: #EA6212;
+}
+.fa-heart-o:hover{
+	background: #EA6212;
+}
+.fa.fa-home:hover{
+	background: #EA6212;
+}
+
+      </style>
 </head>
 <body>
     <!--this header contain the navigation-bar code-->
@@ -37,7 +65,7 @@
                         <a href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#event" class="nav-link">Events</a>
+                        <a href="/events" class="nav-link">Events</a>
                     </li>
                     <li class="nav-item">
                         <a href="#about" class="nav-link">About Us</a>
@@ -46,12 +74,12 @@
                         <a href="#con" class="nav-link">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Login</a>
+                        <a href="/userlogin" class="nav-link">Login</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <button class="btn menu-right-btn border" type="submit">
-                        Register 
+                <form class="form-inline my-2 my-lg-0" action="#section-10">
+                    <button class="btn btn-outline-info btn-lg" type="submit">
+                        Join Us 
                     </button>
                 </form>
             </div>
@@ -67,7 +95,7 @@
                         <h1 class="site-title">Never Underestimate</h1>
                         <p class="site-desc">Your Ability To Make Some Else's Life Better</p>
                         <div class="d-flex flex-row">
-                          <input type="button" value="Get Started" class="btn site-btn1 px-4 py-3 btn-light">
+                          <input type="button" value="Get Started" onclick="window.location.href='/register/volunteer'" class="btn site-btn1 px-4 py-3 btn-light">
                         </div>
                     </div>
                 </div>
@@ -95,36 +123,117 @@
                 <div class="col-sm-12">
 
                   <!--Start-->
-                <div id="inam" class="carousel slide" data-ride="carousel">
+                  <div id="inam" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container" id="event">
-                                <div class="row">
-                                    <div class="col-sm-12 col-lg-4">
-                                        <div class="card" style="width: 300px;margin: auto; height: 32rem;" data-aos="fade-in"     
-                                        data-aos-offset="200" 
-                                        data-aos-delay="80"
-                                        data-aos-duration="4000" > <!--Event Cards-->
-                                        <img src="/public/assets/images/card1.jpg" class="card-img-top">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Heading</h5>
-                                                <span>type</span></br>
-                                                <span>status</span></br>
-                                                <span>location</span></br>
-                          
-                                                <p class="card-text" style="margin-top: 5%;">This is a wider card with supporting text below as a natural 
-                                                    lead-in to additional content. This content is a little bit longer.</p>
+                      <div class="carousel-item active">
+                         <div class="container" id="event">
+                           <div class="row">
+                             <div class="col-sm-12 col-lg-4">
+                               <div class="card" style="width: 300px;margin: auto; height: 30rem;" data-aos="fade-in"     
+                               data-aos-offset="200" 
+                               data-aos-delay="80"
+                               data-aos-duration="4000" > <!--Event Cards-->
+                                 <img src="/assets/images/card1.jpg" class="card-img-top">
+                                 <div class="card-body">
+                                   <h4 class="card-title">Why you should use skin masks ?</h4>
+                                   <p class="card-text">Skin masks help us to make are skin fresh and also they protect our skin from the harm rays of sun</p>
+                                   <button type="button" class="btn btn-warning">Read More</button>
+                                   
+                                 </div>
+                                 
+                               </div>
+                               
+                             </div>
+                             <div class="col-sm-12 col-lg-4">
+                               <div class="card" style="width: 300px; height: 30rem;" data-aos="fade-in"
+                               data-aos-offset="200"
+                               data-aos-delay="80"
+                               data-aos-duration="3000">  <!--Event Cards-->
+                                 <img src="/assets/images/card2.jpg" class="card-img-top">
+                                 <div class="card-body">
+                                   <h4 class="card-title">Why you should use skin masks ?</h4>
+                                   <p class="card-text">Skin masks help us to make are skin fresh and also they protect our skin from the harm rays of sun</p>
+                                   <button type="button" class="btn btn-warning">Read More</button>
+                                   
+                                 </div>
+                                 
+                               </div>
+                               
+                             </div>
+                             <div class="col-sm-12 col-lg-4">
+                               <div class="card" style="width: 300px; height: 30rem;" data-aos="fade-in"
+                               data-aos-offset="200"
+                               data-aos-delay="80"
+                               data-aos-duration="2000">  <!--Event Cards-->
+                                 <img src="/assets/images/card3.jpg" class="card-img-top">
+                                 <div class="card-body">
+                                   <h4 class="card-title">Why you should use skin masks ?</h4>
+                                   <p class="card-text">Skin masks help us to make are skin fresh and also they protect our skin from the harm rays of sun</p>
+                                   <button type="button" class="btn btn-warning">Read More</button>
+                                   
+                                 </div>
+                                 
+                               </div>
+                               
+                             </div>
+                             
+                           </div>
+                           
+                         </div>
+                         
                         
-                                                <a href="#" class="btn btn-primary">More..</a>
-                                                 <p class="card-text"><small class="text-muted">Startes on 06/04/2020</small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      </div>
+                      <div class="carousel-item">
+                         <div class="container">
+                           <div class="row">
+                             <div class="col-sm-12 col-lg-4">
+                               <div class="card" style="width: 300px;margin: auto; height: 30rem;">  <!--Event Cards-->
+                                 <img src="/assets/images/d.jpg" class="card-img-top">
+                                 <div class="card-body">
+                                   <h4 class="card-title">Why you should use skin masks ?</h4>
+                                   <p class="card-text">Skin masks help us to make are skin fresh and also they protect our skin from the harm rays of sun</p>
+                                   <button type="button" class="btn btn-warning">Read More</button>
+                                   
+                                 </div>
+                                 
+                               </div>
+                               
+                             </div>
+                             <div class="col-sm-12 col-lg-4">
+                               <div class="card" style="width: 300px; height: 30rem;">  <!--Event Cards-->
+                                 <img src="/assets/images/e.jpg" class="card-img-top">
+                                 <div class="card-body">
+                                   <h4 class="card-title">Why you should use skin masks ?</h4>
+                                   <p class="card-text">Skin masks help us to make are skin fresh and also they protect our skin from the harm rays of sun</p>
+                                   <button type="button" class="btn btn-warning">Read More</button>
+                                   
+                                 </div>
+                                 
+                               </div>
+                               
+                             </div>
+                             <div class="col-sm-12 col-lg-4">
+                               <div class="card" style="width: 300px; height: 30rem;">  <!--Event Cards-->
+                                 <img src="/assets/images/f.jpg" class="card-img-top">
+                                 <div class="card-body">
+                                   <h4 class="card-title">Why you should use skin masks ?</h4>
+                                   <p class="card-text">Skin masks help us to make are skin fresh and also they protect our skin from the harm rays of sun</p>
+                                   <button type="button" class="btn btn-warning">Read More</button>
+                                   
+                                 </div>
+                                 
+                               </div>
+                               
+                             </div>
+                             
+                           </div>
+                           
+                         </div>
+            
+                        
+                      </div>
+                      
                     </div>
-                </div>
                     <!--End-->
                     <a href="#inam" class="carousel-control-prev" data-slide="prev"> <!--Prevous btn in the carosel-->
                       <span class="carousel-control-prev-icon"></span>
@@ -144,7 +253,8 @@
         </div>
        <!-- End of section 1 -->
        <!--Section 2 Code-->
-       <div class="section-2">
+       
+       <div class="section-2" >
             <div class="contatiner" data-aos="fade-in"
             data-aos-offset="200"
             data-aos-delay="50"
@@ -155,7 +265,7 @@
                 data-aos-delay="50"
                 data-aos-duration="3000">
                     <div class="d-flex flex-row">
-                        <img src="/public/assets/images/connect.png">
+                        <img src="/assets/images/connect.png">
                         <div class="d-flex flex-column">
                             <h3 class="m-2">
                                 Join Event
@@ -172,7 +282,7 @@
                 data-aos-delay="50"
                 data-aos-duration="2000">
                     <div class="d-flex flex-row ">
-                        <img src="/public/assets/images/checklist.png">
+                        <img src="/assets/images/checklist.png">
                         <div class="d-flex flex-column">
                             <h3 class="m-2">
                                 Check Events
@@ -189,7 +299,7 @@
                 data-aos-delay="50"
                 data-aos-duration="1000">
                     <div class="d-flex flex-row">
-                        <img src="/public/assets/images/login.png">
+                        <img src="/assets/images/login.png">
                         <div class="d-flex flex-column">
                             <h3 class="m-2">
                                 Register & Login 
@@ -206,15 +316,15 @@
         </div>
         <!-- End of section 2 -->
         <!-- Section 3 -->
-        
+        <section id="section-10" class="pt-5">
             <div class="row container-2" id="reg">
               <div class="col volunteer"  data-aos="fade-in"
               data-aos-offset="200"
               data-aos-delay="50"
               data-aos-duration="2000">
-                <img src="/public/assets/images/volunteer.png">
+                <img src="/assets/images/volunteer.png">
                 <div class="btn-4">
-                  <button class="button button2">Join As Volunteer</button>
+                  <a href="/register/volunteer"><button class="btn btn-outline-info btn-lg mt-5">Join As Volunteer</button></a> 
                 </div>
               </div>
               <div class="col vl"  data-aos="fade-in"
@@ -225,24 +335,34 @@
               data-aos-offset="200"
               data-aos-delay="50"
               data-aos-duration="4000">
-                <img src="/public/assets/images/group.png">
+                <img src="/assets/images/group.png">
                 <div class="btn-4">
-                  <button class="button button2">Join As Organization</button> 
+                  <a href="/register/host"><button class="btn btn-outline-info btn-lg mt-5">Join As Host</button></a> 
                 </div>
               </div>
+             
             </div>
-        
-        <!-- End of Section 3 -->
+            
+       </section>
+     
+     <div class="icon">
+      <span class="fa-stack fa-2x" aria-hidden="true">
+        <i class="fa fa-home fa-stack-1x fa-inverse" onclick="window.location.href='/home#top'" ></i>
+      </span>
+     </div> 
+     <!-- End of Section 3 -->
         <!-- Footer -->
+        
         <footer>
           <div class="row" id="con">
               <div class="col-sm-6 col-md-4 footer-navigation">
                   <h3><a href="#">Swechcha<span></span></a></h3>
                   <p class="links"> 
-                    <a href="#">Home</a></br></br> 
-                    <a href="#">Events</a></br></br>  
-                    <a href="#">About</a></br></br>  
-                    <a href="#">Contact</a></br></br>
+                    <a href="/">Home</a></br></br> 
+                    <a href="/events">Events</a></br></br>  
+                    <a href="#about">About</a></br></br>  
+                    <a href="#con">Contact</a></br></br>
+                    <a href="/login">Login</a></br></br>
                   </p>
                   <p class="company-name">Swechca&copy; 2020</p>
               </div>
